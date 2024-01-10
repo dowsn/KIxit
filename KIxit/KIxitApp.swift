@@ -10,7 +10,7 @@ import SwiftUI
 
 @main
 struct KIxitApp: App {
-    
+    // object
     @StateObject var gameController = GameController()
 
     var body: some Scene {
