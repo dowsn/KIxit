@@ -12,10 +12,15 @@ class GameController: ObservableObject {
     
     var id = UUID()
     var cardsPerPlayer: Int = 4
-    @Published var turnNumber: Int = 1
     @Published var themePlayerIndex: Int = 0
     @Published var players: [Player] = []
     @Published var exhibitions: [Exhibition] = []
+    
+    // for game
+    @Published var currentExhibition: Int = 0
+    
+    // for topic selection
+    @Published var currentPlayer: Int = 0
     
     init() {
 //        self.players = players
@@ -27,18 +32,28 @@ class GameController: ObservableObject {
 //        self.themePlayerIndex = players.indices.randomElement()! // first theme player is random
     }
     
-    func nextTurn() {
-        turnNumber += 1
-        themePlayerIndex = (themePlayerIndex) % players.count
+    //
+    
+    func nextExhibition() {
+        currentExhibition = (currentExhibition + 1) % exhibitions.count
     }
     
-    func resetPlayersCards() async {
-        for var player in players {
-//            var randomCard = await generateRandomCard()
-            
-//            player.cards.append(randomCard)
-        }
+    func nextPlayer() {
+        currentPlayer = (currentPlayer + 1) % players.count
     }
+    
+    func nextPlayerAndTurn() {
+        
+    }
+    
+    
+//    func resetPlayersCards() async {
+//        for var player in players {
+////            var randomCard = await generateRandomCard()
+//            
+////            player.cards.append(randomCard)
+//        }
+//    }
     
     func startGame() async {
         

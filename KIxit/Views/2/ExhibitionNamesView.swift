@@ -15,16 +15,25 @@ struct ExhibitionNamesView: View {
     @State private var exhibitions: [Exhibition] = []
     @ObservedObject var openai = OpenAIController()
     
+    
     var body: some View {
         NavigationView {
             VStack {
                 
                 Spacer()
                 
-                if !exhibitions.isEmpty {
+                if !gameController.exhibitions.isEmpty {
                     List {
-                        ForEach(exhibitions){ exhibition in
-                            Text(exhibition.name)
+                        ForEach(gameController.exhibitions){ exhibition in
+                            VStack{
+                                Text(exhibition.name).font(.headline)
+                                
+                                if let playername = exhibition.player?.name {
+                                    Text(playername).font(.footnote)
+                                }
+                                
+                            }
+                            
                         }
                     }
                     
@@ -34,9 +43,13 @@ struct ExhibitionNamesView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: CreatePlayersViews()) {
-                    Text("Next")
+                if !gameController.exhibitions.isEmpty {
+                    NavigationLink(destination: AddTopicView(exhibition: gameController.exhibitions[0])) {
+                        Text("Next")
+                    }
                 }
+            
+        
               
                 
             }.navigationBarTitle("Exhibition Names")
@@ -45,13 +58,12 @@ struct ExhibitionNamesView: View {
             
             openai.setup()
             
-            for _ in 1...3 {
+            for player in gameController.players{
                 guard let exhibitionName = await openai.generateGalleryNames() else { break }
                 
                 print(exhibitionName)
-                let newExhibition = Exhibition(name: exhibitionName)
+                let newExhibition = Exhibition(name: exhibitionName, player: player)
                 gameController.exhibitions.append(newExhibition)
-
             }
             
 

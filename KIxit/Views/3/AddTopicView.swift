@@ -1,30 +1,34 @@
 //
-//  OpeningScreen.swift
+//  AddTopicView.swift
 //  KIxit
 //
-//  Created by Lukas Meinhart on 06.01.24.
+//  Created by Lukas Meinhart on 10.01.24.
 //
 
 import SwiftUI
 
-
-struct CreatePlayersViews: View {
-    
+struct AddTopicView: View {
     
     @EnvironmentObject var gameController: GameController
 
-    @State private var currentPlayer: String = ""
-    @State private var formMessage: String = ""
+    var exhibition: Exhibition
+    var playerName: String {
+        if let player = exhibition.player {
+            return player.name
+        }
+    }
+    
+    @State private var currentArtName: String = ""
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack{
-                    TextField("Player name", text: $currentPlayer)
+                    TextField("Art pieace titles", text: currentArtName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
-                        if(gameController.players.count <= 5) {
+                        if(gameController.players.count <= 3) {
                             guard !self.currentPlayer.isEmpty else { return }
                             let newPlayer = Player(name: self.currentPlayer)
                             gameController.players.append(newPlayer)
@@ -72,16 +76,17 @@ struct CreatePlayersViews: View {
         }.environmentObject(gameController)
           
         }
-        
-        
+    
+//    @ViewBuilder
+//    func chooseDestination() -> some View {
+//        switch i {
+//        case 0: MatematicaView()
+//        case 1: ArteView()
+//        default: EmptyView()
+//        }
+//    }
 }
 
-
-    
-    
-
-
-
 #Preview {
-    CreatePlayersViews()
+    AddTopicView()
 }
