@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+
 @main
 struct KIxitApp: App {
+    
+    @StateObject var gameController = GameController()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CreatePlayersViews().environmentObject(GameController())
         }
     }
 }

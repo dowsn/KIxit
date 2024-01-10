@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "openaikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OpenDive/OpenAIKit.git",
+      "state" : {
+        "revision" : "55cc10e406bba124f908dcebe54f3cd62529d3f7",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "openaiswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adamrushy/OpenAISwift.git",
+      "state" : {
+        "revision" : "ca66fb720d6ebb657601db5a0852b830ae310a4c",
+        "version" : "1.4.1"
+      }
+    }
+  ],
+  "version" : 2
+}
