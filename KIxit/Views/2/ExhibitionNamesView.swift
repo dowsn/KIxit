@@ -44,7 +44,7 @@ struct ExhibitionNamesView: View {
                 Spacer()
                 
                 if !gameController.exhibitions.isEmpty {
-                    NavigationLink(destination: AddTopicView(exhibition: gameController.exhibitions[0])) {
+                    NavigationLink(destination: AddTitlesView(exhibitionIndex: 0)) {
                         Text("Next")
                     }
                 }

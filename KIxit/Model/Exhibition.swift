@@ -11,5 +11,10 @@ struct Exhibition: Identifiable {
     let id = UUID()
     let name: String
     let player: Player?
-    let topics: [String] = []
+    var titles: [Title] = []
+}
+
+struct Title: Identifiable {
+    let id = UUID()
+    let name: String
 }

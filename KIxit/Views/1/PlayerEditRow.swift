@@ -11,7 +11,7 @@ struct PlayerEditRow: View {
     
     @EnvironmentObject var gameController: GameController
     
-    var player: Player?
+    var playerIndex: Player?
     
     var body: some View {
         HStack {
@@ -35,6 +35,12 @@ struct PlayerEditRow: View {
         }
         .padding()
     }
+    
+    func remove(at offsets: IndexSet) {
+         withAnimation {
+             viewModel.items.remove(atOffsets: offsets)
+         }
+     }
 }
 
 #Preview {

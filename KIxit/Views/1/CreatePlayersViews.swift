@@ -67,7 +67,7 @@ struct CreatePlayersViews: View {
                 }
              
              
-            }.navigationBarTitle("Create Players")
+            }.navigationBarTitle("Add Players")
             
         }.environmentObject(gameController)
           
