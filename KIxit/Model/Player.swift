@@ -22,6 +22,13 @@ struct Player: Identifiable, Codable {
         self.score = 0
        
     }
+    
+    init(name: String, color: Color) {
+        self.name = name
+        self.color = color
+        self.score = 0
+       
+    }
     //    var cards: [Card]
     
 //    private var imageName: String

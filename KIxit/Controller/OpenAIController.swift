@@ -25,7 +25,7 @@ final class OpenAIController: ObservableObject {
     private var openai: OpenAI?
     
     func setup() {
-        openai = OpenAI(Configuration(organizationId: "Personal", apiKey: "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"))
+        openai = OpenAI(Configuration(organizationId: "Personal", apiKey: "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"))
     }
 
     func generateImage(prompt: String) async -> [UIImage] {

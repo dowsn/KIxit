@@ -9,12 +9,10 @@ import Foundation
 
 struct Exhibition: Identifiable {
     let id = UUID()
-    let name: String
+    var name: String = ""
     let player: Player?
-    var titles: [Title] = []
+    var titles: [String] = []
+
 }
 
-struct Title: Identifiable {
-    let id = UUID()
-    let name: String
-}
+

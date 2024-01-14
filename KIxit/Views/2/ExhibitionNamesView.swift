@@ -11,7 +11,7 @@ struct ExhibitionNamesView: View {
     
     
     @EnvironmentObject var gameController: GameController
-
+    
     @State private var exhibitions: [Exhibition] = []
     @ObservedObject var openai = OpenAIController()
     
@@ -22,63 +22,73 @@ struct ExhibitionNamesView: View {
                 
                 Spacer()
                 
-                if !gameController.exhibitions.isEmpty {
+                if exhibitions.isEmpty {
+                    Text("Loading...")
+                } else {
                     List {
-                        ForEach(gameController.exhibitions){ exhibition in
-                            VStack{
-                                Text(exhibition.name).font(.headline)
-                                
-                                if let playername = exhibition.player?.name {
-                                    Text(playername).font(.footnote)
-                                }
-                                
+                        
+                        
+                        ForEach(exhibitions){ exhibition in
+                            
+                            
+                            if(exhibition.name != ""){
+                                VStack{
+                                    Text(exhibition.name).font(.headline)
+                                    
+                                    if let playername = exhibition.player?.name {
+                                        Text(playername).font(.footnote)
+                                    }
+                                    
+                                }.padding()
+                            } else {
+                                Text("Loading...").padding()
                             }
+                            
                             
                         }
                     }
-                    
-                } else {
-                    Text("Loading...")
                 }
                 
                 Spacer()
                 
                 if !gameController.exhibitions.isEmpty {
-                    NavigationLink(destination: AddTitlesView(exhibitionIndex: 0)) {
-                        Text("Next")
-                    }
+                    //                    NavigationLink(destination: AddTitlesView()) {
+                    Text("Next")
                 }
-            
-        
-              
+                
+                
+                
+                
                 
             }.navigationBarTitle("Exhibition Names")
             
-        }.task {
-            
-            openai.setup()
-            
-            for player in gameController.players{
-                guard let exhibitionName = await openai.generateGalleryNames() else { break }
+        }.environmentObject(gameController)
+            .task {
                 
-                print(exhibitionName)
-                let newExhibition = Exhibition(name: exhibitionName, player: player)
-                gameController.exhibitions.append(newExhibition)
+                openai.setup()
+                
+                for exhibition in gameController.exhibitions{
+//                    guard let exhibitionName = await openai.generateGalleryNames() else { break }
+                    let exhibitionName = "testname"
+                    var updatedExhibition = exhibition
+                    updatedExhibition.name = exhibitionName
+                    exhibitions.append(updatedExhibition)
+                }
+                
+                
             }
-            
-
-        }
-         .environmentObject(gameController)
+        
         
         
     }
-
 }
+
+
     
     
 
 
 
 #Preview {
-    CreatePlayersViews()
+    CreatePlayersViews().environmentObject(GameController())
 }

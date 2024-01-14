@@ -12,6 +12,8 @@
 		808FDDF32B4F03A200EB188A /* AddTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808FDDF22B4F03A200EB188A /* AddTitlesView.swift */; };
 		8D069DAC2B4DE0E200C1D22F /* ExhibitionNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DAB2B4DE0E200C1D22F /* ExhibitionNamesView.swift */; };
 		8D069DB02B4DE50900C1D22F /* Exhibition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DAF2B4DE50900C1D22F /* Exhibition.swift */; };
+		8D069DB22B5412F100C1D22F /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */; };
+		8D360AB72B5488740070D296 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D360AB62B5488740070D296 /* UserSettings.swift */; };
 		8DC569AA2B44B1C30049936B /* KIxitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC569A92B44B1C30049936B /* KIxitApp.swift */; };
 		8DC569AC2B44B1C30049936B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC569AB2B44B1C30049936B /* ContentView.swift */; };
 		8DC569AE2B44B1C50049936B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DC569AD2B44B1C50049936B /* Assets.xcassets */; };
@@ -20,6 +22,7 @@
 		8DC569BB2B44B2400049936B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC569BA2B44B2400049936B /* Player.swift */; };
 		8DC569BD2B44B25E0049936B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC569BC2B44B25E0049936B /* Card.swift */; };
 		8DC569C02B44B3200049936B /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC569BF2B44B3200049936B /* CardGenerator.swift */; };
+		8DDB9D6A2B544C8F00C2AF2F /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB9D692B544C8F00C2AF2F /* CardDeckView.swift */; };
 		8DF758B02B4831E200E5363E /* OpenAIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758AF2B4831E200E5363E /* OpenAIController.swift */; };
 		8DF758B32B48337300E5363E /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8DF758B22B48337300E5363E /* OpenAIKit */; };
 		8DF758B52B48416B00E5363E /* ExhibitionNameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758B42B48416B00E5363E /* ExhibitionNameRow.swift */; };
@@ -36,6 +39,8 @@
 		808FDDF22B4F03A200EB188A /* AddTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitlesView.swift; sourceTree = "<group>"; };
 		8D069DAB2B4DE0E200C1D22F /* ExhibitionNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionNamesView.swift; sourceTree = "<group>"; };
 		8D069DAF2B4DE50900C1D22F /* Exhibition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exhibition.swift; sourceTree = "<group>"; };
+		8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
+		8D360AB62B5488740070D296 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		8DC569A62B44B1C30049936B /* KIxit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KIxit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC569A92B44B1C30049936B /* KIxitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIxitApp.swift; sourceTree = "<group>"; };
 		8DC569AB2B44B1C30049936B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		8DC569BA2B44B2400049936B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8DC569BC2B44B25E0049936B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8DC569BF2B44B3200049936B /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
+		8DDB9D692B544C8F00C2AF2F /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
 		8DF758AF2B4831E200E5363E /* OpenAIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIController.swift; sourceTree = "<group>"; };
 		8DF758B42B48416B00E5363E /* ExhibitionNameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionNameRow.swift; sourceTree = "<group>"; };
 		8DF758B92B48595800E5363E /* ExhibitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionsView.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			children = (
 				8DF758AF2B4831E200E5363E /* OpenAIController.swift */,
 				8DC569B82B44B2060049936B /* GameController.swift */,
+				8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 		8DC5699D2B44B1C30049936B = {
 			isa = PBXGroup;
 			children = (
+				8D360AB62B5488740070D296 /* UserSettings.swift */,
 				8DC569A82B44B1C30049936B /* KIxit */,
 				8DC569A72B44B1C30049936B /* Products */,
 			);
@@ -138,6 +146,7 @@
 		8DC569C12B44B3270049936B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8DDB9D682B544C6B00C2AF2F /* CardDeck */,
 				8DC569AB2B44B1C30049936B /* ContentView.swift */,
 				8DF758B92B48595800E5363E /* ExhibitionsView.swift */,
 				8DF758B42B48416B00E5363E /* ExhibitionNameRow.swift */,
@@ -147,6 +156,14 @@
 				8DF758C02B4B408800E5363E /* 1 */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8DDB9D682B544C6B00C2AF2F /* CardDeck */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB9D692B544C8F00C2AF2F /* CardDeckView.swift */,
+			);
+			path = CardDeck;
 			sourceTree = "<group>";
 		};
 		8DF758BD2B49B71800E5363E /* X */ = {
@@ -247,11 +264,14 @@
 			files = (
 				8D069DB02B4DE50900C1D22F /* Exhibition.swift in Sources */,
 				808FDDF12B4F000800EB188A /* RoundView.swift in Sources */,
+				8DDB9D6A2B544C8F00C2AF2F /* CardDeckView.swift in Sources */,
 				808CEA252B50467100E45618 /* TitleEditRow.swift in Sources */,
+				8D069DB22B5412F100C1D22F /* GeneralExtensions.swift in Sources */,
 				8DC569BB2B44B2400049936B /* Player.swift in Sources */,
 				808FDDF32B4F03A200EB188A /* AddTitlesView.swift in Sources */,
 				8DC569AC2B44B1C30049936B /* ContentView.swift in Sources */,
 				8DC569BD2B44B25E0049936B /* Card.swift in Sources */,
+				8D360AB72B5488740070D296 /* UserSettings.swift in Sources */,
 				8DC569C02B44B3200049936B /* CardGenerator.swift in Sources */,
 				8DC569AA2B44B1C30049936B /* KIxitApp.swift in Sources */,
 				8DF758B02B4831E200E5363E /* OpenAIController.swift in Sources */,
@@ -399,7 +419,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -430,7 +450,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

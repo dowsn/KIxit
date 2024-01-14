@@ -128,7 +128,7 @@ struct CardGenerator: View {
             
             
             Spacer()
-            TextField("Prompt", text: $prompt, axis: .vertical)
+            TextField("Prompt", text: $prompt)
                 .padding()
                 .textFieldStyle(.roundedBorder)
                 .font(Font.system(size: 15, design: .default))
