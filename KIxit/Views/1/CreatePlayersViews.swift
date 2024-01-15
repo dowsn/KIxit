@@ -81,6 +81,7 @@ struct CreatePlayersViews: View {
                 
                 
                 // will this work
+                if(players.count >= 2) {
                 NavigationLink(destination: ExhibitionNamesView(), isActive: $isNavigationActive) {
                     Text("Next")
                 }.simultaneousGesture(TapGesture().onEnded{
