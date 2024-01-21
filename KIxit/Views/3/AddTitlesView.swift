@@ -31,6 +31,7 @@ struct AddTitlesView: View {
         VStack{
             Text("Hello World")
         }
+        .navigationBarBackButtonHidden(true)
 //        NavigationView {
 //            VStack {
 //                HStack{
@@ -99,7 +100,7 @@ struct AddTitlesView: View {
         }
     
 //    func checkTitlesText(_ string: String) -> String {
-//        
+//
 //        let passwordRegex = "/^[a-zA-Z0-9]{8,30}$/"
 //        if (NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: string)) {
 //            return true
@@ -107,7 +108,7 @@ struct AddTitlesView: View {
 //            return false
 //            message = "Please enter a valid art title"
 //        }
-//        
+//
 //    }
     
 //    @ViewBuilder

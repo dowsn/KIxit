@@ -19,19 +19,32 @@ struct CardDeckView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(0..<images.count, id: \.self) { index in
-                        images[index]
-                            .resizable()
-                            .frame(width: 100, height: 100)
-                            .onTapGesture {
-                                toggleCard(index)
-                            }
+                        if(index == selectedCard) {
+                            images[index]
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .border(Color.green, width: 5)
+                                .onTapGesture {
+                                    toggleCard(index)
+                                }
+                        } else {
+                            images[index]
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .onTapGesture {
+                                    toggleCard(index)
+                                }
+                        }
+                     
                         
                     }
                 }
-                
                 .padding(.horizontal)
+                .background(Color.red)
+                .scaledToFill()
+                
             }
-            .frame(maxHeight: 400)
+            .frame(maxHeight: 1000)
             .onAppear(perform: loadImages)
             
             Spacer()
@@ -42,13 +55,6 @@ struct CardDeckView: View {
                 Text("Play card")
             }
             
-            //        VStack {
-            //            Picker(selection: $selectedCard, label: Text("Play one card")) {
-            //              ForEach(0 ..< 5) { index in
-            //                  Text("Card \(index)")
-            //              }
-            //            }
-            //        }
         }
     }
     
@@ -60,9 +66,7 @@ struct CardDeckView: View {
     }
     
     func toggleCard(_ index: Int) {
-        print("Tapped \(index)")
         selectedCard = index
-        print("Selected card \(selectedCard)")
     }
 }
 

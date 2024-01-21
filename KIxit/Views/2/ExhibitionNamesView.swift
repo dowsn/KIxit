@@ -11,7 +11,6 @@ struct ExhibitionNamesView: View {
     
     
     @EnvironmentObject var gameController: GameController
-    
     @State private var exhibitions: [Exhibition] = []
     @ObservedObject var openai = OpenAIController()
     
@@ -52,8 +51,13 @@ struct ExhibitionNamesView: View {
                 Spacer()
                 
                 if !gameController.exhibitions.isEmpty {
-                    //                    NavigationLink(destination: AddTitlesView()) {
-                    Text("Next")
+                    NavigationLink(destination: AddTitlesView().navigationBarBackButtonHidden(true)) {
+                        Text("Next")
+                    }.simultaneousGesture(TapGesture().onEnded{
+                         gameController.exhibitions = exhibitions
+                        // update exhibitions
+                    })
+                
                 }
                 
                 
@@ -69,7 +73,8 @@ struct ExhibitionNamesView: View {
                 
                 for exhibition in gameController.exhibitions{
 //                    guard let exhibitionName = await openai.generateGalleryNames() else { break }
-                    let exhibitionName = "testname"
+                    
+                    let exhibitionName = "test"
                     var updatedExhibition = exhibition
                     updatedExhibition.name = exhibitionName
                     exhibitions.append(updatedExhibition)

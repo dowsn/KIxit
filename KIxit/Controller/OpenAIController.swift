@@ -22,10 +22,26 @@ final class OpenAIController: ObservableObject {
     @Published var messages: [ChatM] = []
     
     
+    private var apiKey: String {
+      get {
+        // 1
+        guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else {
+          fatalError("Couldn't find file 'TMDB-Info.plist'.")
+        }
+        // 2
+        let plist = NSDictionary(contentsOfFile: filePath)
+        guard let value = plist?.object(forKey: "OPENAI_API_KEY") as? String else {
+          fatalError("Couldn't find key 'API_KEY' in 'TMDB-Info.plist'.")
+        }
+        return value
+      }
+    }
+    
+    
     private var openai: OpenAI?
     
     func setup() {
-        openai = OpenAI(Configuration(organizationId: "Personal", apiKey: "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"))
+        openai = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
 
     func generateImage(prompt: String) async -> [UIImage] {
@@ -87,51 +103,5 @@ final class OpenAIController: ObservableObject {
         }
     }
     
-//    private var openAI: OpenAISwift?
-//
-//     init() {}
-//
-//     func setupOpenAI() {
-//         let config: OpenAISwift.Config = .makeDefaultOpenAI(apiKey: "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")
-//         openAI = OpenAISwift(config: config) // Initialize OpenAI
-//     }
-//
-//
-//    func addMessage(_ ChatMessage: ChatM) {
-//        messages.append(ChatMessage)
-//    }
-//
-//    func  giveMeThreeExhibitions() async {
-//
-//            do {
-//
-//                addMessage(ChatM(role: "system", content: "You are an experienced galerist and you want to open a new exhibition."))
-//                addMessage(ChatM(role: "user", content: "Give me three original titles for exhibitions divided by *"))
-//
-//
-//                if let openAI = openAI {
-//                    let result = try await openAI.sendChat(with: messages)
-//                    print(result)
-//
-//                    // apend result
-//                }
-//
-//
-//
-//                // use result
-//            } catch {
-//                print(error)
-////                return nil
-//            }
-//
-//
-//    }
-    
-    
-
-    
-    
-    
-}
 
 

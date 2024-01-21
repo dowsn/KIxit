@@ -13,6 +13,8 @@ struct CreatePlayersViews: View {
     
     @EnvironmentObject var gameController: GameController
     @State private var players: [Player] = []
+    
+    @State private var playerNames: [String] = []
 
 
     @State private var currentPlayer: String = ""
@@ -40,6 +42,7 @@ struct CreatePlayersViews: View {
                             if(checkStringText(currentPlayer) == true) {
                                 let newPlayer = Player(name: self.currentPlayer, color: self.currentColor)
                                 players.append(newPlayer)
+                                playerNames.append(currentPlayer)
                                 formReset()
                             }
                             
@@ -82,15 +85,13 @@ struct CreatePlayersViews: View {
                 
                 // will this work
                 if(players.count >= 2) {
-                NavigationLink(destination: ExhibitionNamesView(), isActive: $isNavigationActive) {
+                    NavigationLink(destination: ExhibitionNamesView().navigationBarBackButtonHidden(true)) {
                     Text("Next")
                 }.simultaneousGesture(TapGesture().onEnded{
-                    for player in players {
-                        gameController.exhibitions.append(Exhibition(player: player))
-                    }
+                        gameController.prepareGame(players: players)
                 })
                 
-            }
+                }
         
              
             }.navigationBarTitle("Add Players")
@@ -118,10 +119,13 @@ struct CreatePlayersViews: View {
 
     
     func checkStringText(_ string: String) -> Bool {
-        if(string.matches("^[a-zA-Z0-9]{1,10}$")){
+        if(string.matches("^[a-zA-Z0-9]{1,10}$") && !playerNames.contains(string)){
             return true
         } else {
-            formThrows(message: "Please enter a valid player name")
+            // player does exist yet in players
+            
+            
+            formThrows(message: "Please enter an original one word player name")
             return false
 
         }

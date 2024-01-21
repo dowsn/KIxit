@@ -13,12 +13,9 @@ struct PlayerEditRow: View {
     
     var body: some View {
         HStack {
-        
+            
                 Text(player.name)
                     .foregroundColor(player.color)
-                
-           
-                
             
         }
         .padding()
