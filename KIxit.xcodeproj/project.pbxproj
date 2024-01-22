@@ -10,6 +10,7 @@
 		808CEA252B50467100E45618 /* TitleEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CEA242B50467100E45618 /* TitleEditRow.swift */; };
 		808FDDF12B4F000800EB188A /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808FDDF02B4F000800EB188A /* RoundView.swift */; };
 		808FDDF32B4F03A200EB188A /* AddTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808FDDF22B4F03A200EB188A /* AddTitlesView.swift */; };
+		80F188AB2B5EDCE300FB7BC8 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80F188AA2B5EDCE300FB7BC8 /* Secrets.plist */; };
 		8D069DAC2B4DE0E200C1D22F /* ExhibitionNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DAB2B4DE0E200C1D22F /* ExhibitionNamesView.swift */; };
 		8D069DB02B4DE50900C1D22F /* Exhibition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DAF2B4DE50900C1D22F /* Exhibition.swift */; };
 		8D069DB22B5412F100C1D22F /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */; };
@@ -31,13 +32,13 @@
 		8DF758BC2B4936B500E5363E /* CreatePlayersViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758BB2B4936B500E5363E /* CreatePlayersViews.swift */; };
 		8DF758BF2B49C12600E5363E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF758BE2B49C12600E5363E /* LaunchScreen.storyboard */; };
 		8DF758C22B4BE5EE00E5363E /* PlayerEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758C12B4BE5EE00E5363E /* PlayerEditRow.swift */; };
-		8DFFDF432B5D076600AD9490 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFFDF422B5D076600AD9490 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		808CEA242B50467100E45618 /* TitleEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleEditRow.swift; sourceTree = "<group>"; };
 		808FDDF02B4F000800EB188A /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		808FDDF22B4F03A200EB188A /* AddTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitlesView.swift; sourceTree = "<group>"; };
+		80F188AA2B5EDCE300FB7BC8 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		8D069DAB2B4DE0E200C1D22F /* ExhibitionNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionNamesView.swift; sourceTree = "<group>"; };
 		8D069DAF2B4DE50900C1D22F /* Exhibition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exhibition.swift; sourceTree = "<group>"; };
 		8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		8DF758BB2B4936B500E5363E /* CreatePlayersViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayersViews.swift; sourceTree = "<group>"; };
 		8DF758BE2B49C12600E5363E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DF758C12B4BE5EE00E5363E /* PlayerEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditRow.swift; sourceTree = "<group>"; };
-		8DFFDF422B5D076600AD9490 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 		8DC5699D2B44B1C30049936B = {
 			isa = PBXGroup;
 			children = (
-				8DFFDF422B5D076600AD9490 /* Secrets.plist */,
+				80F188AA2B5EDCE300FB7BC8 /* Secrets.plist */,
 				8D360AB62B5488740070D296 /* UserSettings.swift */,
 				8DC569A82B44B1C30049936B /* KIxit */,
 				8DC569A72B44B1C30049936B /* Products */,
@@ -252,7 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFFDF432B5D076600AD9490 /* Secrets.plist in Resources */,
+				80F188AB2B5EDCE300FB7BC8 /* Secrets.plist in Resources */,
 				8DF758BF2B49C12600E5363E /* LaunchScreen.storyboard in Resources */,
 				8DC569B12B44B1C50049936B /* Preview Assets.xcassets in Resources */,
 				8DC569AE2B44B1C50049936B /* Assets.xcassets in Resources */,

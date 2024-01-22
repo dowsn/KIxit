@@ -18,23 +18,23 @@ struct ChatM {
 
 
 final class OpenAIController: ObservableObject {
- 
+    
     @Published var messages: [ChatM] = []
     
     
     private var apiKey: String {
-      get {
-        // 1
-        guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else {
-          fatalError("Couldn't find file 'TMDB-Info.plist'.")
+        get {
+            // 1
+            guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else {
+                fatalError("Couldn't find file 'TMDB-Info.plist'.")
+            }
+            // 2
+            let plist = NSDictionary(contentsOfFile: filePath)
+            guard let value = plist?.object(forKey: "OPENAI_API_KEY") as? String else {
+                fatalError("Couldn't find key 'API_KEY' in 'TMDB-Info.plist'.")
+            }
+            return value
         }
-        // 2
-        let plist = NSDictionary(contentsOfFile: filePath)
-        guard let value = plist?.object(forKey: "OPENAI_API_KEY") as? String else {
-          fatalError("Couldn't find key 'API_KEY' in 'TMDB-Info.plist'.")
-        }
-        return value
-      }
     }
     
     
@@ -43,7 +43,7 @@ final class OpenAIController: ObservableObject {
     func setup() {
         openai = OpenAI(Configuration(organizationId: "Personal", apiKey: apiKey))
     }
-
+    
     func generateImage(prompt: String) async -> [UIImage] {
         print(prompt)
         guard let openai = openai else { return [] }
@@ -79,7 +79,7 @@ final class OpenAIController: ObservableObject {
                 
                 ChatMessage(role: .system, content: "You are an experienced galerist and you want to open a new exhibition."),
                 ChatMessage(role: .user, content: "Give me an original title for exhibition"),
-          
+                
             ]
             
             let chatParameters = ChatParameters(
@@ -103,5 +103,6 @@ final class OpenAIController: ObservableObject {
         }
     }
     
+}
 
 
