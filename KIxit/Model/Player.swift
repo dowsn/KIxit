@@ -9,12 +9,13 @@ import Foundation
 import SwiftUI
 import UIKit
 
-struct Player: Identifiable, Codable {
+struct Player: Identifiable {
     
     var id = UUID()
     var name: String
     var score: Int = 0
     var color: Color
+    var cards: [Card] = []
     
     init(name: String) {
         self.name = name
@@ -29,12 +30,6 @@ struct Player: Identifiable, Codable {
         self.score = 0
        
     }
-    //    var cards: [Card]
-    
-//    private var imageName: String
-//    var image: Image {
-//        Image(imageName)
-//    }
     
 }
 
@@ -102,5 +97,33 @@ extension Color: Codable {
         try container.encode(colorComponents.green, forKey: .green)
         try container.encode(colorComponents.blue, forKey: .blue)
     }
+}
+
+struct Card: Identifiable {
+
+    var id = UUID()
+    var prompt: String = "random"
+    var image: Image
+    
+    init(prompt: String, image: Image){
+        self.prompt = prompt
+        self.image = image
+    }
+
+    // init with prompt
+    init (prompt: String) async {
+        self.prompt = prompt
+        self.imagePath = await getImageURL(prompt: prompt) ?? "" // default add LINK if doesn't get object
+//        self.image = AsyncImage(url: URL(string: imageURL))
+    }
+
+
+    // random image init
+    init () async {
+        self.imagePath = await getImageURL(prompt: prompt) ?? "" // generate random and if fails then add default links
+//        self.image = AsyncImage(url: URL(string: imageURL)) // now with "random"
+    }
+
+
 }
 

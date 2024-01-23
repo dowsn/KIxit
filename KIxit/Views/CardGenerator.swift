@@ -12,12 +12,6 @@ import OpenAIKit
 
 // generates card and if liked, add to deck
 // timer and you use prompt to generate images and create deck
-
-final class ViewModel: ObservableObject {
-    
-    
-private var openai: OpenAI?
-    
  
 struct CardGenerator: View {
 
@@ -25,6 +19,7 @@ struct CardGenerator: View {
     @EnvironmentObject var gameController: GameController
     
     @State private var prompt: String = ""
+    @State private var playerIndex = 0
     @State private var imageArray: [UIImage] = []
 
     
@@ -82,10 +77,21 @@ struct CardGenerator: View {
                     prompt = ""
                 }
             }
-            
-            Button("Save") {
-                if(imageArray.count > 0){
-                    playerCards = Card(image: imageArray[0], prompt: prompt)
+            if(imageArray.count > 0){
+                Button(action:
+                    {
+                      var image = Image(uiImage: imageArray[0]);
+                      var randomString = AppController().generateRandomString(length: 10)
+                    openai.saveImage(image: Image(uiImage: image, as: randomString)
+                        var playerDeck = GameController.players[playerIndex].cards
+                        var card = Card(image: imageArray[0], prompt: prompt)
+                        playerDeck.append(card)
+                }) {
+                    Text("Save")
+                }
+                    
+                   
+                    
                 }
             }
         }

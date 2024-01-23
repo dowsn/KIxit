@@ -38,15 +38,12 @@ struct CreatePlayersViews: View {
                     }
                     
                     Button(action: {
-                        if(players.count <= 5) {
-                            if(checkStringText(currentPlayer) == true) {
+                        if(players.count <= 5 && checkStringText(currentPlayer) == true) {
+                        
                                 let newPlayer = Player(name: self.currentPlayer, color: self.currentColor)
                                 players.append(newPlayer)
                                 playerNames.append(currentPlayer)
                                 formReset()
-                            }
-                            
-                            
                             
                         } else {
                             

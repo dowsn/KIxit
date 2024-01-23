@@ -32,6 +32,7 @@
 		8DF758BC2B4936B500E5363E /* CreatePlayersViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758BB2B4936B500E5363E /* CreatePlayersViews.swift */; };
 		8DF758BF2B49C12600E5363E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF758BE2B49C12600E5363E /* LaunchScreen.storyboard */; };
 		8DF758C22B4BE5EE00E5363E /* PlayerEditRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF758C12B4BE5EE00E5363E /* PlayerEditRow.swift */; };
+		8DFFDF452B5F174C00AD9490 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFDF442B5F174C00AD9490 /* AppController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		8DF758BB2B4936B500E5363E /* CreatePlayersViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayersViews.swift; sourceTree = "<group>"; };
 		8DF758BE2B49C12600E5363E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DF758C12B4BE5EE00E5363E /* PlayerEditRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditRow.swift; sourceTree = "<group>"; };
+		8DFFDF442B5F174C00AD9490 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				8DF758AF2B4831E200E5363E /* OpenAIController.swift */,
 				8DC569B82B44B2060049936B /* GameController.swift */,
 				8D069DB12B5412F100C1D22F /* GeneralExtensions.swift */,
+				8DFFDF442B5F174C00AD9490 /* AppController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				8DC569BD2B44B25E0049936B /* Card.swift in Sources */,
 				8D360AB72B5488740070D296 /* UserSettings.swift in Sources */,
 				8DC569C02B44B3200049936B /* CardGenerator.swift in Sources */,
+				8DFFDF452B5F174C00AD9490 /* AppController.swift in Sources */,
 				8DC569AA2B44B1C30049936B /* KIxitApp.swift in Sources */,
 				8DF758B02B4831E200E5363E /* OpenAIController.swift in Sources */,
 				8DF758B52B48416B00E5363E /* ExhibitionNameRow.swift in Sources */,

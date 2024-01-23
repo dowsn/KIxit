@@ -77,6 +77,20 @@ final class OpenAIController: ObservableObject {
         
     }
     
+    func saveImage(image: UIImage, as: String) {
+       
+            if let data = image.pngData() {
+                let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
+                try? data.write(to: filename)
+            }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    
     func generateGalleryNames() async -> String? {
         
         do {

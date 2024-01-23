@@ -49,6 +49,7 @@ class GameController: ObservableObject {
         }
     }
     
+    
     // ROUND exhibition 1 image 1
     // generating images for topic by players except the one that is adding the topic - saving deck
     // selecting images by the same player and then other player plays
