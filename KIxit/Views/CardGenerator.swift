@@ -30,16 +30,7 @@ struct CardGenerator: View {
        
             Spacer()
             
-            Image("chilkoottrail")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 300, height: 300)
-                .clipShape(.rect(cornerRadius: 10))
-                .overlay{
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.orange, lineWidth: 5) // border
-                }
-                 .shadow(radius: 10)
+       
             
             if imageArray.count > 0 {
                 
@@ -81,10 +72,10 @@ struct CardGenerator: View {
                 Button(action:
                     {
                       var image = Image(uiImage: imageArray[0]);
-                      var randomString = AppController().generateRandomString(length: 10)
-                    openai.saveImage(image: Image(uiImage: image, as: randomString)
-                        var playerDeck = GameController.players[playerIndex].cards
-                        var card = Card(image: imageArray[0], prompt: prompt)
+//                      var randomString = AppController().generateRandomString(length: 10)
+//                       openai.saveImage(image: Image(uiImage: image), as: randomString)
+                        var playerDeck = gameController.players[playerIndex].cards
+                        var card = Card(image: image, prompt: prompt)
                         playerDeck.append(card)
                 }) {
                     Text("Save")
@@ -93,7 +84,7 @@ struct CardGenerator: View {
                    
                     
                 }
-            }
+            
         }
         .navigationTitle("Card Generator")
         .onAppear {
@@ -101,8 +92,7 @@ struct CardGenerator: View {
         }
         }
         .padding()
-       
-    }.environmentObject(gameController())
+        .environmentObject(gameController)
     
     
 }

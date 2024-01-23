@@ -102,27 +102,27 @@ extension Color: Codable {
 struct Card: Identifiable {
 
     var id = UUID()
-    var prompt: String = "random"
     var image: Image
+    var prompt: String = "random"
     
-    init(prompt: String, image: Image){
-        self.prompt = prompt
+    init(image: Image, prompt: String){
         self.image = image
+        self.prompt = prompt
     }
 
     // init with prompt
-    init (prompt: String) async {
-        self.prompt = prompt
-        self.imagePath = await getImageURL(prompt: prompt) ?? "" // default add LINK if doesn't get object
-//        self.image = AsyncImage(url: URL(string: imageURL))
-    }
-
-
-    // random image init
-    init () async {
-        self.imagePath = await getImageURL(prompt: prompt) ?? "" // generate random and if fails then add default links
-//        self.image = AsyncImage(url: URL(string: imageURL)) // now with "random"
-    }
+//    init (prompt: String) async {
+//        self.prompt = prompt
+//        self.imagePath = await getImageURL(prompt: prompt) ?? "" // default add LINK if doesn't get object
+////        self.image = AsyncImage(url: URL(string: imageURL))
+//    }
+//
+//
+//    // random image init
+//    init () async {
+//        self.imagePath = await getImageURL(prompt: prompt) ?? "" // generate random and if fails then add default links
+////        self.image = AsyncImage(url: URL(string: imageURL)) // now with "random"
+//    }
 
 
 }
